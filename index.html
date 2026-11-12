@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição - Nike Esports</title>
+    <style>
+        /* Reset básico e fontes */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container principal do formulário */
+        .form-container {
+            background-color: #171717;
+            width: 100%;
+            max-width: 520px;
+            padding: 40px;
+            border-radius: 12px;
+            border-top: 5px solid #ff5500; /* Destaque estilo Nike/Esports */
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Cabeçalho */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        .header h1 span {
+            color: #ff5500;
+        }
+
+        .header p {
+            color: #a3a3a3;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        /* Grupos de campos */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: #d4d4d4;
+        }
+
+        /* Estilo dos inputs, selects e textarea */
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #262626;
+            border: 1px solid #404040;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 15px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff5500;
+            box-shadow: 0 0 8px rgba(255, 85, 0, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        /* Linha com duas colunas */
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        /* Checkbox de termos */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            font-size: 13px;
+            color: #a3a3a3;
+        }
+
+        .checkbox-group input {
+            width: 18px;
+            height: 18px;
+            accent-color: #ff5500;
+            cursor: pointer;
+        }
+
+        /* Botão de envio */
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background-color: #ff5500;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .btn-submit:hover {
+            background-color: #e04b00;
+        }
+
+        .btn-submit:active {
+            transform: scale(0.98);
+        }
+
+        /* Responsividade para celulares */
+        @media (max-width: 480px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            .form-container {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="header">
+            <h1>NIKE <span>ESPORTS</span></h1>
+            <p>Seletiva Oficial de Jogadores — Preencha sua ficha</p>
+        </div>
+
+        <form action="#" method="POST">
+            <!-- Nome Completo -->
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+            </div>
+
+            <!-- Nickname e Idade lado a lado -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nickname">Nickname / Gamertag</label>
+                    <input type="text" id="nickname" name="nickname" placeholder="Ex: PlayerOne" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="idade">Idade</label>
+                    <input type="number" id="idade" name="idade" min="14" max="99" placeholder="Ex: 19" required>
+                </div>
+            </div>
+
+            <!-- E-mail -->
+            <div class="form-group">
+                <label for="email">E-mail de Contato</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+            </div>
+
+            <!-- Modalidade / Jogo -->
+            <div class="form-group">
+                <label for="jogo">Modalidade Principal</label>
+                <select id="jogo" name="jogo" required>
+                    <option value="" disabled selected>Selecione um jogo...</option>
+                    <option value="valorant">Valorant</option>
+                    <option value="lol">League of Legends</option>
+                    <option value="cs2">Counter-Strike 2</option>
+                    <option value="eafc">EA Sports FC</option>
+                    <option value="rocketleague">Rocket League</option>
+                </select>
+            </div>
+
+            <!-- Experiência Competitiva -->
+            <div class="form-group">
+                <label for="experiencia">Histórico Competitivo / Rank Atual</label>
+                <textarea id="experiencia" name="experiencia" placeholder="Conte-nos seu elo atual, equipes anteriores ou torneios disputados..."></textarea>
+            </div>
+
+            <!-- Termos -->
+            <div class="checkbox-group">
+                <input type="checkbox" id="termos" name="termos" required>
+                <label for="termos" style="text-transform: none; margin: 0; font-weight: 400;">
+                    Concordo com os termos da seletiva Nike Esports.
+                </label>
+            </div>
+
+            <!-- Botão Enviar -->
+            <button type="submit" class="btn-submit">Enviar Inscrição</button>
+        </form>
+    </div>
+
+</body>
+</html>
